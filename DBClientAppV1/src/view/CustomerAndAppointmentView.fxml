@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="704.0" prefWidth="1032.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerAppointmentViewController">
+   <children>
+      <HBox alignment="CENTER_RIGHT" layoutX="8.0" layoutY="14.0" prefHeight="68.0" prefWidth="974.0">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#OnActionViewReports" prefHeight="25.0" prefWidth="135.0" text="View Reports">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button alignment="CENTER" layoutX="849.0" layoutY="42.0" mnemonicParsing="false" onAction="#OnActionLogOut" prefHeight="25.0" prefWidth="135.0" text="Log out" />
+         </children>
+         <padding>
+            <Insets right="5.0" />
+         </padding></HBox>
+      <HBox layoutX="9.0" layoutY="90.0" prefHeight="235.0" prefWidth="1009.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="168.0" prefWidth="186.0" spacing="20.0">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <children>
+                  <Label alignment="CENTER" prefHeight="31.0" prefWidth="140.0" text="Customers">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#OnActionAddCustomer" prefHeight="25.0" prefWidth="141.0" text="Add" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#OnActionUpdateCustomer" prefHeight="25.0" prefWidth="141.0" text="Update" />
+                  <Button layoutX="10.0" layoutY="35.0" mnemonicParsing="false" onAction="#OnActionDeleteCustomer" prefHeight="25.0" prefWidth="141.0" text="Delete" />
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="10.0" prefHeight="235.0" prefWidth="795.0">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <children>
+                  <TableView fx:id="customerTableView" prefHeight="235.0" prefWidth="779.0">
+                    <columns>
+                      <TableColumn fx:id="customerId" prefWidth="98.0" text="Customer_ID" />
+                      <TableColumn fx:id="customerName" prefWidth="168.0" text="Customer_Name" />
+                        <TableColumn fx:id="address" prefWidth="168.0" text="Address" />
+                        <TableColumn fx:id="postalCode" prefWidth="131.0" text="Postal_Code" />
+                        <TableColumn fx:id="phone" prefWidth="126.0" text="Phone" />
+                        <TableColumn fx:id="divisionId" prefWidth="89.0" text="Division_ID" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox layoutX="11.0" layoutY="416.0" prefHeight="235.0" prefWidth="1003.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="168.0" prefWidth="186.0" spacing="20.0">
+               <HBox.margin>
+                  <Insets right="10.0" top="10.0" />
+               </HBox.margin>
+               <children>
+                  <Label alignment="CENTER" prefHeight="31.0" prefWidth="140.0" text="Appointments">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#OnActionAddAppointment" prefHeight="25.0" prefWidth="141.0" text="Add" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#OnActionUpdateAppointment" prefHeight="25.0" prefWidth="141.0" text="Update" />
+                  <Button layoutX="10.0" layoutY="35.0" mnemonicParsing="false" onAction="#OnActionDeleteAppointment" prefHeight="25.0" prefWidth="141.0" text="Delete" />
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="10.0" prefHeight="235.0" prefWidth="799.0">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <children>
+                  <TableView fx:id="appTableView" prefHeight="213.0" prefWidth="775.0">
+                     <columns>
+                        <TableColumn fx:id="appIdCol" prefWidth="106.0" text="Appointment_ID" />
+                        <TableColumn fx:id="titleCol" prefWidth="59.0" text="Title" />
+                        <TableColumn fx:id="descriptionCol" prefWidth="79.0" text="Description" />
+                        <TableColumn fx:id="locationCol" prefWidth="69.0" text="Location" />
+                        <TableColumn fx:id="typeCol" prefWidth="54.0" text="Type" />
+                        <TableColumn fx:id="startCol" prefWidth="103.0" text="Start" />
+                        <TableColumn fx:id="endCol" prefWidth="101.0" text="End" />
+                        <TableColumn fx:id="customerIdCol" minWidth="0.0" prefWidth="82.0" text="Customer_ID" />
+                        <TableColumn fx:id="userIdCol" minWidth="0.0" prefWidth="52.0" text="User_ID" />
+                        <TableColumn fx:id="contactIdCol" minWidth="0.0" prefWidth="71.0" text="Contact_ID" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <RadioButton fx:id="appDefault" layoutX="619.0" layoutY="393.0" mnemonicParsing="false" onAction="#OnActionDefault" selected="true" text="Default">
+         <toggleGroup>
+            <ToggleGroup fx:id="appView" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="appWeek" layoutX="752.0" layoutY="393.0" mnemonicParsing="false" onAction="#OnActionWeek" text="This Week" toggleGroup="$appView" />
+      <RadioButton fx:id="appMonth" layoutX="886.0" layoutY="393.0" mnemonicParsing="false" onAction="#OnActionMonth" text="This Month" toggleGroup="$appView" />
+   </children>
+</AnchorPane>

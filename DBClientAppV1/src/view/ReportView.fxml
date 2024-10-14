@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="662.0" prefWidth="1003.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReportViewController">
+   <children>
+      <Label layoutX="47.0" layoutY="48.0" prefHeight="27.0" prefWidth="135.0" text="Reports">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <HBox alignment="TOP_CENTER" layoutX="33.0" layoutY="76.0" prefHeight="283.0" prefWidth="936.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="263.0" prefWidth="570.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="240.0" text="View Appointments by Type and Month" textFill="#1a1b1b">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font></Label>
+                  <GridPane alignment="CENTER_LEFT" prefWidth="312.0" vgap="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.0" minWidth="10.0" prefWidth="148.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="154.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Appointment Type" />
+                        <Label text="Month" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="appTypeReportOneCombo" prefWidth="150.0" GridPane.columnIndex="1" />
+                        <ComboBox fx:id="monthReportOneCombo" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                     <padding>
+                        <Insets top="50.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <VBox alignment="CENTER" prefHeight="140.0" prefWidth="312.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#OnActionViewFirstReportResult" prefHeight="25.0" prefWidth="98.0" text="View">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Label fx:id="firstReportResult" prefHeight="17.0" prefWidth="382.0" />
+                     </children>
+                  </VBox>
+               </children>
+               <HBox.margin>
+                  <Insets right="100.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="323.0" layoutY="10.0" prefHeight="263.0" prefWidth="461.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Label text="View Customers by Country and Division" textFill="#1d1e1e">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <GridPane prefHeight="64.0" prefWidth="327.0" vgap="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="158.0" minWidth="10.0" prefWidth="153.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="10.0" prefWidth="164.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Country" />
+                        <Label text="Division" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="customerCountryCombo" prefWidth="150.0" GridPane.columnIndex="1" />
+                        <ComboBox fx:id="customerDivisionCombo" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <Button mnemonicParsing="false" onAction="#OnActionViewSecondReportResult" prefHeight="25.0" prefWidth="98.0" text="View">
+                     <VBox.margin>
+                        <Insets bottom="15.0" top="40.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Label fx:id="secondReportResult" prefHeight="17.0" prefWidth="300.0" />
+               </children>
+               <HBox.margin>
+                  <Insets left="150.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets right="40.0" top="20.0" />
+         </padding>
+      </HBox>
+      <Label alignment="TOP_LEFT" layoutX="47.0" layoutY="368.0" prefHeight="25.0" prefWidth="233.0" text="View Contact's Appointment Schedule" textFill="#1d1e1e">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="838.0" layoutY="606.0" mnemonicParsing="false" onAction="#OnActionBackBtn" prefHeight="25.0" prefWidth="110.0" text="Back" />
+      <HBox layoutX="31.0" layoutY="400.0" prefHeight="180.0" prefWidth="952.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="180.0" prefWidth="154.0">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <children>
+                  <Label text="Pick a Contact">
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="40.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ComboBox fx:id="pickContactCombo" onAction="#OnActionSetTableView" prefWidth="150.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="180.0" prefWidth="811.0">
+               <children>
+                  <TableView fx:id="filteredAppTableView" prefHeight="180.0" prefWidth="693.0">
+                    <columns>
+                      <TableColumn fx:id="appIdCol" prefWidth="102.0" text="Appointment_ID" />
+                      <TableColumn fx:id="titleCol" prefWidth="78.0" text="Title" />
+                        <TableColumn fx:id="descriptionCol" prefWidth="83.0" text="Description" />
+                        <TableColumn fx:id="locationCol" prefWidth="88.0" text="Location" />
+                        <TableColumn fx:id="typeCol" prefWidth="102.0" text="Type" />
+                        <TableColumn fx:id="startCol" prefWidth="115.0" text="Start" />
+                        <TableColumn fx:id="endCol" minWidth="0.0" prefWidth="122.0" text="End" />
+                        <TableColumn fx:id="customerIdCol" minWidth="0.0" prefWidth="99.0" text="Customer_ID" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children></VBox>
+         </children></HBox>
+     
+   </children>
+</AnchorPane>
